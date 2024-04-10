@@ -1,0 +1,186 @@
+<trace>
+	<event>
+		<string key="elementId" value="Event_1uwsphs"/>
+		<string key="concept:name" value="Customer Order Received"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<string key="processId" value="Process_1"/>
+		<date key="time:timestamp" value="2023-07-04T19:00:00.000+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_0zlhwln"/>
+		<string key="resourceId" value="qbp_d66ced67-fe66-d54b-7a62-4b4e3be46a71"/>
+		<string key="org:resource" value="Resource2-000001"/>
+		<string key="resourceCost" value="1.2468111111111109"/>
+		<string key="concept:name" value="Recover Customer Information"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-04T21:45:37.540+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_0mt2w5k"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000001"/>
+		<string key="resourceCost" value="1.1587125"/>
+		<string key="concept:name" value="Check Payment"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-04T22:41:22.515+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_074nbz9"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000001"/>
+		<string key="resourceCost" value="0.5"/>
+		<string key="concept:name" value="Register the Order"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T12:09:06.180+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_05qnapc"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000001"/>
+		<string key="resourceCost" value="0.9677458333333333"/>
+		<string key="concept:name" value="Select Rider and Create Work Proposal"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T14:03:41.739+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_1r7emvp"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000001"/>
+		<string key="resourceCost" value="0.5"/>
+		<string key="concept:name" value="Send Work Proposal to Rider"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T15:11:52.373+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_1mf8wy9"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000002"/>
+		<string key="resourceCost" value="1.1545458333333334"/>
+		<string key="concept:name" value="Receive Refusal from Rider"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T15:39:04.034+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_05qnapc"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000001"/>
+		<string key="resourceCost" value="1.0580458333333334"/>
+		<string key="concept:name" value="Select Rider and Create Work Proposal"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T16:05:07.717+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_1r7emvp"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000001"/>
+		<string key="resourceCost" value="0.5"/>
+		<string key="concept:name" value="Send Work Proposal to Rider"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T16:24:55.304+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_00fcmsc"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000001"/>
+		<string key="resourceCost" value="0.5761375"/>
+		<string key="concept:name" value="Receive Confirmation from Rider"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T16:39:51.238+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_02rjtb4"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000001"/>
+		<string key="resourceCost" value="0.5"/>
+		<string key="concept:name" value="Send Confirmation to Rider"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T16:54:18.025+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_1623ajo"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000003"/>
+		<string key="resourceCost" value="0.8510916666666666"/>
+		<string key="concept:name" value="Estimate Waiting Time"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T16:54:26.603+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_1nwzzzm"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000002"/>
+		<string key="resourceCost" value="0.8282"/>
+		<string key="concept:name" value="Send Waiting Time to Customer"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T17:08:40.975+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_13779o3"/>
+		<string key="resourceId" value="qbp_d66ced67-fe66-d54b-7a62-4b4e3be46a71"/>
+		<string key="org:resource" value="Resource2-000003"/>
+		<string key="resourceCost" value="1.0128222222222223"/>
+		<string key="concept:name" value="Receive Notification Order Retired"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T21:29:48.206+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_1ww6nps"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000003"/>
+		<string key="resourceCost" value="0.5"/>
+		<string key="concept:name" value="Send Notification Order Retired to the client"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T21:56:36.754+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_0gh475d"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000002"/>
+		<string key="resourceCost" value="0.75"/>
+		<string key="concept:name" value="Receive Complete Order Confirmation"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-05T22:49:11.880+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_1iwh9bs"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000003"/>
+		<string key="resourceCost" value="2.6381291666666664"/>
+		<string key="concept:name" value="Receive Customer Satisfaction Questionnaire"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-06T12:36:08.546+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Activity_1axkrpg"/>
+		<string key="resourceId" value="Lane_0f7txj4"/>
+		<string key="org:resource" value="Resource1-000001"/>
+		<string key="resourceCost" value="2.889954166666667"/>
+		<string key="concept:name" value="Pay Rider"/>
+		<string key="processId" value="Process_1"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<date key="time:timestamp" value="2023-07-06T14:53:30.785+02:00"/>
+	</event>
+	<event>
+		<string key="elementId" value="Event_1iwqv9w"/>
+		<string key="concept:name" value="Order Completed"/>
+		<string key="lifecycle:transition" value="complete"/>
+		<string key="processId" value="Process_1"/>
+		<date key="time:timestamp" value="2023-07-06T14:53:30.785+02:00"/>
+	</event>
+</trace>

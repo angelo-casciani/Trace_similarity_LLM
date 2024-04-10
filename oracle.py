@@ -30,9 +30,9 @@ class AnswerVerificationOracle:
     def add_prompt_expected_answer_pair(self, prompt, expected_answer):
         """Add a prompt-expected answer pair to the oracle."""
         self.prompt_expected_answer_pairs.append((prompt, expected_answer))
-        if expected_answer == "Yes":
+        if expected_answer == "yes":
             self.positives += 1
-        elif expected_answer == "No":
+        elif expected_answer == "no":
             self.negatives += 1
 
     """ Verifying the answer correctness.
@@ -50,8 +50,7 @@ class AnswerVerificationOracle:
 
         for prompt_text, expected_answer in self.prompt_expected_answer_pairs:
             if prompt_text == prompt:
-                result['expected_answer'] = expected_answer.capitalize()
-                # result['verification_result'] = model_answer.split(',')[0].strip(' .,').lower() == expected_answer.lower()
+                result['expected_answer'] = expected_answer
                 result['verification_result'] = False
                 for word in model_answer.split():
                     if expected_answer.lower() in word.strip(' .,').lower():
@@ -78,19 +77,22 @@ class AnswerVerificationOracle:
 
         for result in self.results:
             if result['verification_result']:
-                if result['expected_answer'] == 'Yes':
+                if result['expected_answer'] == 'yes':
                     self.true_positives += 1
                 else:
                     self.true_negatives += 1
             else:
-                if result['expected_answer'] == 'Yes':
+                if result['expected_answer'] == 'yes':
                     self.false_negatives += 1
                 else:
                     self.false_positives += 1
 
-        self.precision = self.true_positives / (self.true_positives + self.false_positives) * 100
-        self.recall = self.true_positives / (self.true_positives + self.false_negatives) * 100
-        self.f1score = 2 * (self.precision * self.recall) / (self.precision + self.recall)/100
+        if self.true_positives + self.false_positives != 0:
+            self.precision = self.true_positives / (self.true_positives + self.false_positives) * 100
+        if self.true_positives + self.false_negatives != 0:
+            self.recall = self.true_positives / (self.true_positives + self.false_negatives) * 100
+        if self.precision + self.recall != 0:
+            self.f1score = 2 * (self.precision * self.recall) / (self.precision + self.recall)/100
 
     """ Writing the verification results to a file.
 
