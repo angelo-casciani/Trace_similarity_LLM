@@ -220,11 +220,7 @@ if __name__ == "__main__":
     device = f'cuda:{cuda.current_device()}' if cuda.is_available() else 'cpu'
     hf_token = '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'  # HuggingFace Token
     model_id = ''
-    """
-    model_id_mistral = 'mistralai/Mistral-7B-Instruct-v0.2'
-    model_id_llama7 = 'meta-llama/Llama-2-7b-chat-hf'
-    model_id_llama13 = 'meta-llama/Llama-2-13b-chat-hf'
-    """
+
     while model_id == '':
         model_choice = input(
             "Select the desired LLM to test:\n1. Mistral 7B;\n2. Llama 2 7B;\n3. Llama 2 13B.\nYour choice: ")
@@ -236,13 +232,6 @@ if __name__ == "__main__":
             model_id = 'meta-llama/Llama-2-13b-chat-hf'
         else:
             print("Not a valid choice!")
-
-    """    
-    pipeline_mistral = initialize_pipeline(model_id_mistral, hf_token)
-    # pipeline_llama7 = initialize_pipeline(model_id_llama7, hf_token)
-    hf_pipeline_mistral = HuggingFacePipeline(pipeline=pipeline_mistral)
-    # hf_pipeline_llama7 = HuggingFacePipeline(pipeline=pipeline_llama7)
-    """
 
     pipeline = initialize_pipeline(model_id, hf_token)
     hf_pipeline = HuggingFacePipeline(pipeline=pipeline)
@@ -273,10 +262,9 @@ if __name__ == "__main__":
 
     oracle = AnswerVerificationOracle()
     if strategy == '1':
-        evaluate_chain_few_shots(oracle, chain, ref_trace, alt_traces_dict)
+        evaluate_chain_one_shot(oracle, chain, ref_trace, alt_traces_dict)
     elif strategy == '2':
-        evaluate_chain_task_description(oracle, chain, ref_trace, alt_traces_dict)
+        evaluate_chain_few_shots(oracle, chain, ref_trace, alt_traces_dict)
     elif strategy == '3':
         evaluate_chain_task_description(oracle, chain, ref_trace, alt_traces_dict)
 
-    # live_prompting(chain_mistral, chain_llama7)
