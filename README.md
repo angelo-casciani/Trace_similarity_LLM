@@ -20,5 +20,5 @@ pip install -r requirements.txt
 This command will read the requirements.txt file and install all the specified packages along with their dependencies.
 
 ## GPU Requirements
-Please note that this software leverages open-source LLMs such as [Mistral](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) and [Llama 2](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf), which have specific requirements in terms of GPU availability.
+Please note that this software leverages open-source LLMs such as [Mistral](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) and [DeciLM](https://huggingface.co/Deci/DeciLM-7B), which have specific requirements in terms of GPU availability.
 It is recommended to have access to a GPU-enabled environment to run the software effectively.

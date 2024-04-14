@@ -140,7 +140,7 @@ def build_trace_dictionary(file_path, expected_answer):
     return trace_dict
 
 
-def evaluate_chain_one_shot(eval_oracle, lang_chain, reference, traces_dict):
+def evaluate_chain_zero_shot(eval_oracle, lang_chain, reference, traces_dict):
     count = 0
     for trace, exp_ans in traces_dict.items():
         question = f"""Trace 1: {reference}
@@ -202,8 +202,9 @@ def evaluate_chain_task_description(eval_oracle, lang_chain, reference, traces_d
     for trace, exp_ans in traces_dict.items():
         question = f"""Trace 1: {reference}
                         Trace 2: {trace}
-                        Does trace 1 and trace 2 correspond to the same trace? Provide only a binary response (i.e., 'yes' or 'no') with no further explanations."""
-        sys_message = "You are an expert system in examining XES execution traces of business processes. Two traces are the same if they are identical or if the attributes of the events compising the traces have the same values except for some slight modifications of the concept:name, otherwise you have to consider them different."
+                        Does trace 1 and trace 2 represent the same trace? Provide only a binary response (i.e., 'yes' or 'no') with no further explanations."""
+        #sys_message = "You are an expert system in examining XES execution traces of business processes. Two traces are the same if they are identical or if the attributes of the events compising the traces have the same values except for some slight modifications of the concept:name, otherwise you have to consider them different."
+        sys_message = "You are an expert system in examining XES execution traces of business processes and you answer with a 'yes' or a 'no' depending respectively on the fact that trace 1 and trace 2 represent the same trace. Two traces represent the same trace if they are identical or if only the value for concept:name present modifications in term of syntax errors or semantic synonyms (i.e., the event name is not drastically different), otherwise they are different."
         eval_oracle.add_prompt_expected_answer_pair(question, exp_ans)
         complete_answer = lang_chain.invoke({"question": question, "system_message": sys_message})
         index = complete_answer.find('[/INST]')
@@ -223,13 +224,13 @@ if __name__ == "__main__":
 
     while model_id == '':
         model_choice = input(
-            "Select the desired LLM to test:\n1. Mistral 7B;\n2. Llama 2 7B;\n3. Llama 2 13B.\nYour choice: ")
+            "Select the desired LLM to test:\n1. Mistral 7B Instruct v0.1;\n2. Mistral 7B Instruct v0.2;\n3. DeciLM 7B.\nYour choice: ")
         if model_choice == '1':
-            model_id = 'mistralai/Mistral-7B-Instruct-v0.2'
+            model_id = 'mistralai/Mistral-7B-Instruct-v0.1'
         elif model_choice == '2':
-            model_id = 'meta-llama/Llama-2-7b-chat-hf'
+            model_id = 'mistralai/Mistral-7B-Instruct-v0.2'
         elif model_choice == '3':
-            model_id = 'meta-llama/Llama-2-13b-chat-hf'
+            model_id = 'Deci/DeciLM-7B'
         else:
             print("Not a valid choice!")
 
@@ -240,7 +241,7 @@ if __name__ == "__main__":
     strategy = ''
     while template == '':
         strategy = input(
-            "Select the desired prompting strategy:\n1. One-shot;\n2. Few-shots;\n3. Task description.\nYour choice: ")
+            "Select the desired prompting strategy:\n1. Zero-shot;\n2. Few-shots;\n3. Task description.\nYour choice: ")
         if strategy == '1':
             template = """<s>[INST] {question} [/INST]"""
         elif strategy == '2':
@@ -262,9 +263,8 @@ if __name__ == "__main__":
 
     oracle = AnswerVerificationOracle()
     if strategy == '1':
-        evaluate_chain_one_shot(oracle, chain, ref_trace, alt_traces_dict)
+        evaluate_chain_zero_shot(oracle, chain, ref_trace, alt_traces_dict)
     elif strategy == '2':
         evaluate_chain_few_shots(oracle, chain, ref_trace, alt_traces_dict)
     elif strategy == '3':
         evaluate_chain_task_description(oracle, chain, ref_trace, alt_traces_dict)
-
