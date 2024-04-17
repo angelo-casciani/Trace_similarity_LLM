@@ -219,7 +219,7 @@ def evaluate_chain_task_description(eval_oracle, lang_chain, reference, traces_d
 
 if __name__ == "__main__":
     device = f'cuda:{cuda.current_device()}' if cuda.is_available() else 'cpu'
-    hf_token = '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'  # HuggingFace Token
+    hf_token = 'HF_TOKEN'  # Repace this string with your personal HuggingFace Token
     model_id = ''
 
     while model_id == '':

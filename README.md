@@ -22,3 +22,10 @@ This command will read the requirements.txt file and install all the specified p
 ## GPU Requirements
 Please note that this software leverages open-source LLMs such as [Mistral](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) and [DeciLM](https://huggingface.co/Deci/DeciLM-7B), which have specific requirements in terms of GPU availability.
 It is recommended to have access to a GPU-enabled environment to run the software effectively.
+
+## Running the Project
+Before running the project, it is necessary to replace in the *main.py* file the predefined string in the *hf_token* with your personal HuggingFace token.
+Then, you can proceed by going in the project directory and executing the following command:
+```bash
+python3 main.py
+```
